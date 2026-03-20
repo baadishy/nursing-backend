@@ -1,0 +1,49 @@
+const { config } = require("dotenv");
+const path = require("path");
+
+// Load .env only for local development. In production (Render) rely on real env vars.
+if (process.env.NODE_ENV !== "production") {
+  config({ path: path.join(__dirname, "..", ".env") });
+}
+
+const {
+  PORT = 3000,
+  MONGODB_URI,
+  JWT_SECRET,
+  JWT_ENDS_IN,
+  ARCJET_ENV,
+  ARCJET_KEY,
+  EMAIL_ACCOUNT,
+  EMAIL_PASSWORD,
+  CLOUDINARY_CLOUD_NAME,
+  CLOUDINARY_API_KEY,
+  CLOUDINARY_API_SECRET,
+  WHATSAPP_PHONE_NUMBER_ID,
+  WHATSAPP_TOKEN,
+  SERVE_FRONTEND,
+  FRONTEND_URL,
+  IMAGEKIT_PUBLIC_KEY,
+  IMAGEKIT_PRIVATE_KEY,
+  IMAGEKIT_URL_ENDPOINT,
+} = process.env;
+
+module.exports = {
+  PORT,
+  MONGODB_URI,
+  JWT_SECRET,
+  JWT_ENDS_IN,
+  ARCJET_ENV,
+  ARCJET_KEY,
+  EMAIL_ACCOUNT,
+  EMAIL_PASSWORD,
+  CLOUDINARY_CLOUD_NAME,
+  CLOUDINARY_API_KEY,
+  CLOUDINARY_API_SECRET,
+  WHATSAPP_PHONE_NUMBER_ID,
+  WHATSAPP_TOKEN,
+  SERVE_FRONTEND,
+  FRONTEND_URL,
+  IMAGEKIT_PUBLIC_KEY,
+  IMAGEKIT_PRIVATE_KEY,
+  IMAGEKIT_URL_ENDPOINT,
+};
